@@ -25,6 +25,10 @@ pub mod socket;
 #[cfg(unix)]
 mod syslog;
 mod unicodedata;
+#[cfg(all(target_os = "wasi", feature = "wasmedge"))]
+pub mod wasmedge_http;
+#[cfg(all(target_os = "wasi", feature = "wasmedge"))]
+pub mod wasmedge_socket;
 mod zlib;
 
 #[cfg(not(target_arch = "wasm32"))]
@@ -122,6 +126,11 @@ pub fn get_module_inits() -> impl Iterator<Item = (Cow<'static, str>, StdlibInit
         #[cfg(target_os = "macos")]
         {
             "_scproxy" => scproxy::make_module,
+        }
+        #[cfg(all(target_os = "wasi", feature = "wasmedge"))]
+        {
+            "wasmedge_http" => wasmedge_http::make_module,
+            "wasmedge_socket" => wasmedge_socket::make_module,
         }
     }
 }

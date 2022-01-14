@@ -29,6 +29,7 @@ pylib = ["rustpython-vm/pylib"]
 zlib = ["stdlib", "rustpython-stdlib/zlib"]
 ssl = ["rustpython-stdlib/ssl"]
 ssl-vendor = ["rustpython-stdlib/ssl-vendor"]
+wasmedge = ["rustpython-stdlib/wasmedge"]
 
 [dependencies]
 log = "0.4"

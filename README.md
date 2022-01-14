@@ -16,6 +16,10 @@ A Python-3 (CPython >= 3.9.0) Interpreter written in Rust :snake: :scream:
 [![WAPM package](https://wapm.io/package/rustpython/badge.svg?style=flat)](https://wapm.io/package/rustpython)
 [![Open in Gitpod](https://img.shields.io/static/v1?label=Open%20in&message=Gitpod&color=1aa6e4&logo=gitpod)](https://gitpod.io#https://github.com/RustPython/RustPython)
 
+## WasmEdge Network Support
+
+Check [WASMEDGE.md](./WASMEDGE.md)
+
 ## Usage
 
 #### Check out our [online demo](https://rustpython.github.io/demo/) running on WebAssembly.
@@ -38,7 +42,7 @@ Or use the interactive shell:
     Welcome to rustpython
     >>>>> 2+2
     4
-    
+
 NOTE: For windows users, please set `RUSTPYTHONPATH` environment variable as `Lib` path in project directory.
 (e.g. When RustPython directory is `C:\RustPython`, set `RUSTPYTHONPATH` as `C:\RustPython\Lib`)
 
@@ -100,7 +104,7 @@ RustPython has an **very** experimental JIT compiler that compile python functio
 By default the JIT compiler isn't enabled, it's enabled with the `jit` cargo feature.
 
     $ cargo run --features jit
-    
+
 This requires autoconf, automake, libtool, and clang to be installed.
 
 #### Using 
